@@ -1,0 +1,9 @@
+<div class="game-board">
+  <timer [gameType]="GAME_TYPE"></timer>
+  <div class="letters-board">
+    <letters-top-row (LetterClicked)="UseLetter($event)"></letters-top-row>
+    <letters-bottom-row (LetterClicked)="ReplaceLetter($event)"></letters-bottom-row>
+  </div>
+  <control-buttons (StartClick)="StartRound()" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (NextRoundClick)="NextRound()" [gameType]="GAME_TYPE" [ConundrumGame]="true" [FullGame]="FullGame"></control-buttons>
+  <message-bar [gameType]="GAME_TYPE"></message-bar>
+</div>

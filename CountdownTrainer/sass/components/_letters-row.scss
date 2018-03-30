@@ -1,0 +1,19 @@
+.letters-row {
+  padding: 10px 5px 10px 5px;
+}
+
+.letter-tile {
+  vertical-align: middle;
+  height: 60px;
+  width: 55px;
+  background-color: white;
+  color: black;
+  display: inline-block;
+  border: solid black 1px;
+  text-align: center;
+  padding: 8px 8px 8px 8px;
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Segoe UI Black', 'Arial Black', Arial;
+  cursor: pointer;
+}

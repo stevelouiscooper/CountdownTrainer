@@ -1,0 +1,26 @@
+<div class="game-board">
+  <timer [gameType]="GAME_TYPE"></timer>
+  <div class="letters-board">
+    <letters-top-row (LetterClicked)="UseLetter($event)"></letters-top-row>
+    <letters-bottom-row (LetterClicked)="ReplaceLetter($event)"></letters-bottom-row>
+    <div *ngIf="gameService.GameState.GameStage <= 1" class="letters-button-row">
+      <button class="letters-button" (click)="SelectLetter(1)">VOWEL</button>
+      <button class="letters-button" (click)="SelectLetter(2)">CONSONANT</button>
+    </div>
+  </div>
+  <control-buttons [gameType]="GAME_TYPE" (StartClick)="StartRound()" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewBestWords()" (NextRoundClick)="NextRound($event)" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
+  <message-bar [gameType]="GAME_TYPE"></message-bar>
+</div>
+<div *ngIf="gameService.GameState.GameStage == 5 && ShowBestWords">
+  <h3>Your word {{gameService.GameState.SubmittedWord}} scored {{gameService.GameState.Score}} points</h3>
+  <h3>Best words:</h3>
+  <div>
+    {{BestWords1}}
+  </div>
+  <div>
+    {{BestWords2}}
+  </div>
+  <div>
+    {{BestWords3}}
+  </div>
+</div>

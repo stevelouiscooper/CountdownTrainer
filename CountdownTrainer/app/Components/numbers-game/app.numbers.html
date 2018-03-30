@@ -1,0 +1,75 @@
+<div class="game-board">
+  <timer [gameType]="GAME_TYPE"></timer>
+  <div class="numbers-game-inner">
+    <div *ngIf="numbersGameService.GameState.GameStage <= 1" class="numbers-select">
+      <div class="select-numbers-row">
+        <div class="select-numbers-tile-not-used"></div>
+        <div class="select-numbers-tile-not-used"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.bigNumbers[0].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.bigNumbers[0].IsSelected" (click)="SelectNumber(numbersGameService.bigNumbers[0])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.bigNumbers[1].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 &&  numbersGameService.bigNumbers[1].IsSelected" (click)="SelectNumber(numbersGameService.bigNumbers[1])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.bigNumbers[2].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.bigNumbers[2].IsSelected" (click)="SelectNumber(numbersGameService.bigNumbers[2])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.bigNumbers[3].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.bigNumbers[3].IsSelected" (click)="SelectNumber(numbersGameService.bigNumbers[3])"></div>
+        <div class="select-numbers-tile-not-used"></div>
+      </div>
+      <div class="select-numbers-row">
+        <div class="select-numbers-tile-not-used"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[0].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[0].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[0])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[1].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[1].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[1])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[2].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[2].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[2])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[3].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[3].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[3])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[4].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[4].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[4])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[5].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[5].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[5])"></div>
+      </div>
+      <div class="select-numbers-row">
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[6].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[6].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[6])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[7].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[7].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[7])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[8].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[8].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[8])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[9].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[9].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[9])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[10].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[10].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[10])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[11].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[11].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[11])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[12].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[12].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[12])"></div>
+      </div>
+      <div class="select-numbers-row">
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[13].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[13].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[13])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[14].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[14].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[14])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[15].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[15].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[15])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[16].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[16].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[16])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[17].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[17].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[17])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[18].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[18].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[18])"></div>
+        <div [class.select-numbers-tile]="numbersGameService.GameState.GameStage == 0 || !numbersGameService.smallNumbers[19].IsSelected" [class.select-numbers-tile-selected]="numbersGameService.GameState.GameStage == 1 && numbersGameService.smallNumbers[19].IsSelected" (click)="SelectNumber(numbersGameService.smallNumbers[19])"></div>
+      </div>
+    </div>
+    <div *ngIf="numbersGameService.GameState.GameStage >= 2" class="play-board">
+      <div class="numbers-target">
+        {{numbersGameService.GameState.Target}}
+      </div>
+      <div class="numbers-board">
+        <div class="numbers-row">
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[0].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[0].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[0])">{{numbersGameService.SelectedNumbers[0].Value}}</div>
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[1].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[1].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[1])">{{numbersGameService.SelectedNumbers[1].Value}}</div>
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[2].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[2].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[2])">{{numbersGameService.SelectedNumbers[2].Value}}</div>
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[3].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[3].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[3])">{{numbersGameService.SelectedNumbers[3].Value}}</div>
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[4].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[4].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[4])">{{numbersGameService.SelectedNumbers[4].Value}}</div>
+          <div [class.number-tile]="!numbersGameService.SelectedNumbers[5].IsUsed" [class.number-tile-used]="numbersGameService.SelectedNumbers[5].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[5])">{{numbersGameService.SelectedNumbers[5].Value}}</div>
+          <br />
+          <div class="equations">
+            <span *ngIf="numbersGameService.GameState.EquationStr[0] && numbersGameService.GameState.EquationStr[0] != null" class="equation" (click)="ClickEquation(0)" [innerHTML]="numbersGameService.GameState.EquationStr[0]"></span><br /><br />
+            <span *ngIf="numbersGameService.GameState.EquationStr[1] && numbersGameService.GameState.EquationStr[1] != null" class="equation" (click)="ClickEquation(1)" [innerHTML]="numbersGameService.GameState.EquationStr[1]"></span><br /><br />
+            <span *ngIf="numbersGameService.GameState.EquationStr[2] && numbersGameService.GameState.EquationStr[2] != null" class="equation" (click)="ClickEquation(2)" [innerHTML]="numbersGameService.GameState.EquationStr[2]"></span>
+          </div>
+          <div class="operators">
+            <span class="operator" (click)="ClickOperator('+')">+</span>
+            <span class="operator" (click)="ClickOperator('-')">&minus;</span>
+            <span class="operator" (click)="ClickOperator('*')">&times;</span>
+            <span class="operator" (click)="ClickOperator('/')">&divide;</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <control-buttons [gameType]="GAME_TYPE" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewSolution()" (NextRoundClick)="NextRound()" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
+  <message-bar [gameType]="GAME_TYPE"></message-bar>
+</div>
+<div *ngIf="ShowSolution">
+  <p>Solution will go here.</p>
+</div>

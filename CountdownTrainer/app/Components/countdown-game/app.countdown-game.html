@@ -1,0 +1,8 @@
+<letters [FullGame]="true" (NextRoundClick)="NextRound($event)" *ngIf="!GameOver && currentGameType == 1"></letters>
+<numbers [FullGame]="true"  (NextRoundClick)="NextRound($event)" *ngIf="!GameOver && currentGameType == 2"></numbers>
+<conundrum [FullGame]="true"  (NextRoundClick)="NextRound($event)" *ngIf="!GameOver && currentGameType == 3"></conundrum>
+<score-tracker *ngIf="!GameOver && Round > 1" [Round]="Round" [Score]="Score" [MaxPossibleScore]="MaxPossibleScore"></score-tracker>
+<div *ngIf="GameOver" class="GameOverMessage">
+  {{GameOverMessage}}
+  <button class="control-button" (click)="PlayAgain()">Play again</button>
+</div>
