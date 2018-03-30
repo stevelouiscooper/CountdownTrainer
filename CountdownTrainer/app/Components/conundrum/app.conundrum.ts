@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { EventEmitter, Input, Output } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-
+import { OnDestroy } from '@angular/core';
 
 import { IGameComponent } from '../Interfaces/IGameComponent';
 import { ConundrumGameService } from '../../Services/ConundrumGameService';
@@ -19,7 +19,7 @@ import { ScoreTracker } from '../../Models/ScoreTracker';
     selector: 'conundrum',
     templateUrl: 'app/Components/conundrum/app.conundrum.html',
 })
-export class ConundrumComponent implements IGameComponent {
+export class ConundrumComponent implements IGameComponent, OnDestroy {
   @ViewChild(TimerComponent)
   Timer: TimerComponent;
 
@@ -85,5 +85,11 @@ export class ConundrumComponent implements IGameComponent {
   NextRound(): void {
     this.NextRoundClick.emit(new ScoreTracker(this.gameService.GameState.Score, 10));
     this.Reset();
-  } 
+  }
+
+  ngOnDestroy() {
+    this.Reset();
+    this.gameService.Reset();
+  }
+
 }

@@ -121,7 +121,7 @@ export class ConundrumGameService implements IGameService {
   public Reset(): void {
     this.gs = new ConundrumGameState();
     this.gs.Message = "Countdown Conundrum!!!";
-    this.gs.GameStage = GameStage.UserSelecting;
+    this.gs.GameStage = GameStage.PreGame;
     this.timerService.Reset();
   }
 
