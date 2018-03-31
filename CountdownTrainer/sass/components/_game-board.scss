@@ -1,8 +1,7 @@
 .game-board {
-  width: 800px;
-  height: 660px;
-  margin: 80px 80px 80px 80px;
-  padding: 20px 20px 20px 20px;
-  border: solid black 1px;
+  width: 80rem;
+  height: 66rem;
+  border: solid $color-dark-blue .5rem;
   text-align: center;
+  background-color: $color-sky-blue-2;
 }

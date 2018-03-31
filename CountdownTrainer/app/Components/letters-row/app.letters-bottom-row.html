@@ -1,11 +1,12 @@
-﻿<div class="letters-row">
-  <div class="letter-tile" (click)="ClickLetter(0)">{{Letters[0]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(1)">{{Letters[1]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(2)">{{Letters[2]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(3)">{{Letters[3]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(4)">{{Letters[4]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(5)">{{Letters[5]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(6)">{{Letters[6]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(7)">{{Letters[7]}}</div>
-  <div class="letter-tile" (click)="ClickLetter(8)">{{Letters[8]}}</div>
+<div class="letters-row">
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[0] === ' '" [class.letters-row__tile-used]="Letters[0] !== ' '" (click)="ClickLetter(0)">{{Letters[0]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[1] === ' '" [class.letters-row__tile-used]="Letters[1] !== ' '" (click)="ClickLetter(1)">{{Letters[1]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[2] === ' '" [class.letters-row__tile-used]="Letters[2] !== ' '" (click)="ClickLetter(2)">{{Letters[2]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[3] === ' '" [class.letters-row__tile-used]="Letters[3] !== ' '" (click)="ClickLetter(3)">{{Letters[3]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[4] === ' '" [class.letters-row__tile-used]="Letters[4] !== ' '" (click)="ClickLetter(4)">{{Letters[4]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[5] === ' '" [class.letters-row__tile-used]="Letters[5] !== ' '" (click)="ClickLetter(5)">{{Letters[5]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[6] === ' '" [class.letters-row__tile-used]="Letters[6] !== ' '" (click)="ClickLetter(6)">{{Letters[6]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[7] === ' '" [class.letters-row__tile-used]="Letters[7] !== ' '" (click)="ClickLetter(7)">{{Letters[7]}}</div>
+  <div class="letters-row__tile" [class.letters-row__tile-empty]="Letters[8] === ' '" [class.letters-row__tile-used]="Letters[8] !== ' '" (click)="ClickLetter(8)">{{Letters[8]}}</div>
 </div>
+

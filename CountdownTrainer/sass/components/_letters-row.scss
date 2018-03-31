@@ -1,19 +1,32 @@
 .letters-row {
-  padding: 10px 5px 10px 5px;
-}
+  background-color: $color-sky-blue-2;
 
-.letter-tile {
-  vertical-align: middle;
-  height: 60px;
-  width: 55px;
-  background-color: white;
-  color: black;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 8px 8px 8px 8px;
-  font-size: 3em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  cursor: pointer;
+  [class^="letters-row__tile"] {
+    &:not(:last-child) {
+      margin-right: .55rem;
+    }
+  }
+
+  &__tile {
+    margin-top: 1rem;
+    vertical-align: middle;
+    height: 8rem;
+    width: calc(100% / 10);
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    padding: 0 .8rem .8rem .8rem;
+    font-size: 5.5em;
+    font-weight: 100;
+
+    &-used {
+      background-color: $color-dark-blue;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer;
+    }
+
+    &-empty {
+      background-color: $color-sky-blue-1;
+    }
+  }
 }
