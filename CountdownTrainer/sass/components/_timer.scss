@@ -1,0 +1,28 @@
+.clock-outer {
+}
+
+.clockface {
+  position: relative;
+  background: url("../app/Content/Images/clock.png");
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  line-height: 20rem;
+  font-size: 2rem;
+}
+
+.clock-hand {
+  position: absolute;
+  left: 9.87rem;
+  bottom: 9.9rem;
+  height: 9.4rem;
+  width: .25rem;
+  background-color: $color-dark-blue;
+
+  &-started {
+    transition: all 30s;
+    transform: rotate(180deg);
+    transform-origin: 100% 0%;
+  }
+}

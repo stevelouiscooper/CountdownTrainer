@@ -23,6 +23,13 @@
       background-color: $color-dark-blue;
       font-family: 'Segoe UI Black', 'Arial Black', Arial;
       cursor: pointer;
+
+      &:hover {
+        border: solid 5px $color-grey;
+        font-size: 5.1em;
+        height: 7.9rem;
+        padding: 0 .6rem .6rem .6rem;
+      }
     }
 
     &-empty {

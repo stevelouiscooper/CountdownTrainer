@@ -10,8 +10,7 @@ import { GameType } from '../../Enums/GameType';
 
 @Component({
     selector: 'timer',
-    templateUrl: './app/Components/timer/app.timer.html',
-    styleUrls: ['./app/Components/timer/app.timer.css']
+    templateUrl: './app/Components/timer/app.timer.html'
 })
 export class TimerComponent implements OnInit, AfterViewInit {
 
@@ -40,6 +39,14 @@ export class TimerComponent implements OnInit, AfterViewInit {
         default:
           this.ActiveGameService = null;
           break;
+      }
+    }
+
+    get ClockStarted(): boolean {
+      if (this.ActiveGameService) {
+        return this.ActiveGameService.GameState.GameStage == GameStage.ClockStarted;
+      } else {
+        return false;
       }
     }
 

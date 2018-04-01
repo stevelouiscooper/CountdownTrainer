@@ -12,20 +12,42 @@ html {
 body {
   box-sizing: border-box; }
 
-.control-button-row {
-  text-align: center;
-  padding: 15px 15px 15px 15px; }
+.u-margin-top-sm {
+  margin-top: .8rem !important; }
 
-.control-button {
-  min-width: 150px;
-  height: 30px;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  font-size: 1em;
-  cursor: pointer; }
+.u-margin-bottom-sm {
+  margin-bottom: .8rem !important; }
+
+.control-buttons {
+  height: 100%;
+  text-align: center;
+  padding: 1rem; }
+  .control-buttons__btn, .control-buttons__btn:link, .control-buttons__btn:visited {
+    display: inline-block;
+    padding: 0.7rem 2rem 0 2rem;
+    height: 100%;
+    background-color: #1b3a94;
+    color: #fff;
+    font-family: 'Segoe UI Black', 'Arial Black', Arial;
+    font-size: 2.2rem;
+    cursor: pointer;
+    margin-left: .4rem;
+    margin-right: .4rem;
+    border: none;
+    border-radius: 4rem; }
+  .control-buttons__btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .control-buttons__btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .control-buttons__btn:active, .control-buttons__btn:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .game-board {
   width: 80rem;
-  height: 66rem;
   border: solid #1b3a94 0.5rem;
   text-align: center;
   background-color: #4f9dce; }
@@ -34,17 +56,27 @@ body {
   width: 100%;
   text-align: center;
   margin: auto; }
-
-.letters-button-row {
-  text-align: center;
-  padding: 15px 15px 15px 15px; }
-
-.letters-button {
-  min-width: 225px;
-  height: 45px;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  font-size: 1.5em;
-  cursor: pointer; }
+  .letters-board__buttons {
+    height: 10rem;
+    text-align: center;
+    padding: 1.5rem; }
+    .letters-board__buttons-select-button {
+      vertical-align: top;
+      display: inline-block;
+      background-color: #1b3a94;
+      height: 95%;
+      color: #fff;
+      width: 48%;
+      height: 5.5rem;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      font-size: 3.5em;
+      cursor: pointer;
+      margin-left: .4rem;
+      margin-right: .4rem;
+      border: none; }
+      .letters-board__buttons-select-button:hover {
+        border: solid 5px #a7a8a9;
+        height: 5.7rem; }
 
 .letters-row {
   background-color: #4f9dce; }
@@ -65,20 +97,31 @@ body {
       background-color: #1b3a94;
       font-family: 'Segoe UI Black', 'Arial Black', Arial;
       cursor: pointer; }
+      .letters-row__tile-used:hover {
+        border: solid 5px #a7a8a9;
+        font-size: 5.1em;
+        height: 7.9rem;
+        padding: 0 .6rem .6rem .6rem; }
     .letters-row__tile-empty {
       background-color: #9cc8e3; }
 
-.message-bar {
-  color: black;
+.message-bar-outer {
+  padding: 1rem; }
+
+.message-bar-text {
+  margin: auto;
+  text-align: center;
+  padding: 1rem;
+  display: block;
+  background-color: rgba(34, 34, 34, 0.45);
   width: 95%;
-  border: solid black 1px;
-  border-radius: 5px;
+  border-radius: 1rem;
+  color: #fff;
   font-family: "Segoe UI Light", "Calibri Light", "Arial Narrow", "Calibri";
-  font-size: 1.5em;
-  padding: 10px 0 10px 0; }
+  font-size: 3rem; }
 
 .game-board {
-  width: 850px; }
+  width: 80rem; }
 
 .numbers-game-inner {
   height: 400px;
@@ -213,3 +256,25 @@ body {
   font-weight: bold;
   font-family: 'Segoe UI Black', 'Arial Black', Arial;
   cursor: pointer; }
+
+.clockface {
+  position: relative;
+  background: url("../app/Content/Images/clock.png");
+  background-size: cover;
+  height: 20rem;
+  width: 20rem;
+  margin: auto;
+  line-height: 20rem;
+  font-size: 2rem; }
+
+.clock-hand {
+  position: absolute;
+  left: 9.87rem;
+  bottom: 9.9rem;
+  height: 9.4rem;
+  width: .25rem;
+  background-color: #1b3a94; }
+  .clock-hand-started {
+    transition: all 30s;
+    transform: rotate(180deg);
+    transform-origin: 100% 0%; }

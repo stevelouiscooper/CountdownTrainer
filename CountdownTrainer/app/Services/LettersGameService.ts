@@ -81,7 +81,12 @@ export class LettersGameService implements IGameService {
 
   timerCompleteCallback(gs: LettersGameState): void {
     LettersGameService.GetSubmittedWord(gs);
-    gs.Message = "You submitted: " + gs.SubmittedWord;
+    if (!gs.SubmittedWord) {
+      gs.Message = "You failed to submit a word.";
+      gs.SubmittedWord = "";
+    } else {
+      gs.Message = "You submitted: " + gs.SubmittedWord;
+    }
   }
 
   postTimerCallback(ticks: number, gs: LettersGameState): void {
@@ -110,7 +115,7 @@ export class LettersGameService implements IGameService {
       gs.Message = gs.SubmittedWord + " is not a valid word. " + gs.Score + " points";
     }
 
-    gs.MaxPossibleScore = gs.BestWords[0][0].length;
+    gs.MaxPossibleScore = gs.BestWords[0][0].length < 9 ? gs.BestWords[0][0].length : 18;
     gs.MaximumScoreAchieved = gs.WordValid && (gs.SubmittedWord.length == gs.BestWords[0][0].length);
     if (gs.MaximumScoreAchieved) {
       gs.Message += " Maximum points!";
@@ -222,7 +227,7 @@ export class LettersGameService implements IGameService {
   }
 
   public static CheckWordValid(word: string) {
-    if (word.length > 0) {
+    if (word && word.length > 0) {
       return DictionaryService.CheckWordValid(word);
     } else {
       return false;

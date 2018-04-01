@@ -1,12 +1,41 @@
-.control-button-row {
-    text-align: center;
-    padding: 15px 15px 15px 15px;
-}
+.control-buttons {
+  height: 100%;
+  text-align: center;
+  padding: 1rem;
 
-.control-button {
-    min-width: 150px;
-    height: 30px;
-    font-family: 'Segoe UI Black', 'Arial Black', Arial;
-    font-size: 1em;
-    cursor: pointer;
+  &__btn {
+    &,
+    &:link,
+    &:visited {
+      display: inline-block;
+      padding: 0.7rem 2rem 0 2rem;
+      height: 100%;
+      background-color: $color-dark-blue;
+      color: #fff;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      font-size: 2.2rem;
+      cursor: pointer;
+      margin-left: .4rem;
+      margin-right: .4rem;
+      border: none;
+      border-radius: 4rem;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba(#000,.2);
+
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
+
+    &:active,
+    &:focus {
+      outline: none;
+      transform: translateY(-1px);
+      box-shadow: 0 .5rem 1rem rgba(#000,.2);
+    }
+  }
 }

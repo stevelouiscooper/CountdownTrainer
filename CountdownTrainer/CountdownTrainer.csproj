@@ -142,11 +142,11 @@
     <Content Include="app\Components\main-menu\app.main-menu.html" />
     <Content Include="app\Components\message-bar\app.message-bar.html" />
     <Content Include="app\Components\score-tracker\app.score-tracker.html" />
-    <Content Include="app\Components\timer\app.timer.css" />
     <Content Include="app\Components\timer\app.timer.html" />
     <Content Include="app\Content\Images\clock.png" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
+    <None Include="sass\components\_letters-board.scss" />
     <Content Include="systemjs.config.extras.js" />
     <Content Include="systemjs.config.js" />
     <Content Include="Web.config" />

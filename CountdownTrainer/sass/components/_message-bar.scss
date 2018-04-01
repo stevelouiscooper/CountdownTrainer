@@ -1,9 +1,16 @@
-.message-bar {
-  color: black;
+.message-bar-outer {
+  padding: 1rem;
+}
+
+.message-bar-text {
+  margin: auto;
+  text-align: center;
+  padding: 1rem;
+  display: block;
+  background-color: rgba($color-dark-grey,0.45);
   width: 95%;
-  border: solid black 1px;
-  border-radius: 5px;
+  border-radius: 1rem;
+  color: #fff;
   font-family: "Segoe UI Light", "Calibri Light", "Arial Narrow", "Calibri";
-  font-size: 1.5em;
-  padding: 10px 0 10px 0;
+  font-size: 3rem;
 }
