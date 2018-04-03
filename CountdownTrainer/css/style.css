@@ -120,142 +120,100 @@ body {
   font-family: "Segoe UI Light", "Calibri Light", "Arial Narrow", "Calibri";
   font-size: 3rem; }
 
-.game-board {
-  width: 80rem; }
-
-.numbers-game-inner {
-  height: 400px;
+.numbers-game {
+  height: 40rem;
   width: 95%;
-  margin: auto;
-  border: solid black 1px; }
-
-.numbers-select {
-  padding-top: 20px;
-  height: 100%;
-  width: 100%; }
-
-.numbers-board {
-  border: solid, black, 1px;
   margin: auto; }
-
-.select-numbers-row {
-  padding: 2px 0 2px 0; }
-
-.select-numbers-tile {
-  vertical-align: middle;
-  height: 48px;
-  width: 44px;
-  background-color: white;
-  color: black;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 2px 2px 2px 2px;
-  font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  cursor: pointer; }
-
-.select-numbers-tile-selected {
-  vertical-align: middle;
-  height: 48px;
-  width: 44px;
-  background-color: black;
-  color: black;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 2px 2px 2px 2px;
-  font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  cursor: pointer; }
-
-.select-numbers-tile-not-used {
-  vertical-align: middle;
-  height: 48px;
-  width: 44px;
-  background-color: #777;
-  display: inline-block;
-  border: solid black 1px;
-  padding: 2px 2px 2px 2px; }
-
-.numbers-target {
-  vertical-align: middle;
-  height: 55px;
-  width: 105px;
-  background-color: white;
-  color: black;
-  display: inline-block;
-  text-align: center;
-  border: solid black 1px;
-  font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  padding: 4px 4px 4px 4px;
-  margin: 4px 4px 4px 4px; }
-
-.numbers-row {
-  padding: 10px 5px 10px 5px; }
-
-.number-tile {
-  vertical-align: middle;
-  height: 65px;
-  width: 65px;
-  background-color: white;
-  color: black;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 4px 4px 4px 4px;
-  font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  cursor: pointer; }
-
-.number-tile-used {
-  vertical-align: middle;
-  height: 65px;
-  width: 65px;
-  background-color: white;
-  color: white;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 4px 4px 4px 4px;
-  font-size: 2.5em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial; }
-
-.equations {
-  text-align: center;
-  padding: 4px 4px 4px 4px;
-  margin: 10px 10px 10px 10px; }
-
-.equation {
-  padding: 6px 6px 6px 6px;
-  cursor: pointer;
-  font-size: 1.5em;
-  border: solid black 1px; }
-
-.operators {
-  padding: 4px 4px 4px 4px;
-  margin: 4px 4px 4px 4px; }
-
-.operator {
-  vertical-align: middle;
-  height: 25px;
-  width: 25px;
-  background-color: white;
-  color: black;
-  display: inline-block;
-  border: solid black 1px;
-  text-align: center;
-  padding: 2px 2px 2px 2px;
-  font-size: 1.25em;
-  font-weight: bold;
-  font-family: 'Segoe UI Black', 'Arial Black', Arial;
-  cursor: pointer; }
+  .numbers-game-select {
+    padding-top: 2rem;
+    height: 100%;
+    width: 100%; }
+    .numbers-game-select__row {
+      padding: .2rem 0 .2rem 0; }
+    .numbers-game-select__tile {
+      vertical-align: middle;
+      height: 4.8rem;
+      width: 4.8rem;
+      color: black;
+      display: inline-block;
+      border: solid black 1px;
+      text-align: center;
+      padding: .2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer; }
+      .numbers-game-select__tile-not-used {
+        color: black;
+        background-color: #a7a8a9; }
+      .numbers-game-select__tile-unselected {
+        background-color: #fff; }
+      .numbers-game-select__tile-selected {
+        background-color: #000; }
+  .numbers-game-target {
+    vertical-align: middle;
+    height: 5.5rem;
+    width: 10.5rem;
+    background-color: white;
+    color: black;
+    display: inline-block;
+    text-align: center;
+    border: solid black 1px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Segoe UI Black', 'Arial Black', Arial;
+    padding: .4rem;
+    margin: .4rem; }
+  .numbers-game-board {
+    border: solid, black, 1px;
+    margin: auto; }
+    .numbers-game-board__row {
+      padding: 1rem .5rem 1rem .5rem; }
+    .numbers-game-board__tile {
+      vertical-align: middle;
+      height: 6.5rem;
+      width: 6.5rem;
+      color: black;
+      display: inline-block;
+      border: solid black 1px;
+      text-align: center;
+      padding: .4rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer; }
+      .numbers-game-board__tile-unused {
+        background-color: white;
+        color: black; }
+      .numbers-game-board__tile-used {
+        background-color: #a7a8a9;
+        color: #a7a8a9; }
+    .numbers-game-board__equations-outer {
+      text-align: center;
+      padding: .4rem;
+      margin: 1rem; }
+    .numbers-game-board__equation {
+      padding: .6rem;
+      cursor: pointer;
+      font-size: 1.54em;
+      border: solid black 1px; }
+    .numbers-game-board__operators-outer {
+      padding: .4rem;
+      margin: .4rem; }
+    .numbers-game-board__operator {
+      vertical-align: middle;
+      height: 2.5rem;
+      width: 2.5rem;
+      background-color: white;
+      color: black;
+      display: inline-block;
+      border: solid black 1px;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer; }
 
 .clockface {
   position: relative;
@@ -275,6 +233,9 @@ body {
   width: .25rem;
   background-color: #1b3a94; }
   .clock-hand-started {
+    position: absolute;
+    left: 9.87rem;
+    bottom: 9.9rem;
     transition: all 30s;
     transform: rotate(180deg);
-    transform-origin: 100% 0%; }
+    transform-origin: 50% 100%; }

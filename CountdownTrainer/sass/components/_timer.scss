@@ -21,8 +21,11 @@
   background-color: $color-dark-blue;
 
   &-started {
+    position: absolute;
+    left: 9.87rem;
+    bottom: 9.9rem;
     transition: all 30s;
     transform: rotate(180deg);
-    transform-origin: 100% 0%;
+    transform-origin: 50% 100%;
   }
 }
