@@ -1,15 +1,15 @@
-<div *ngIf="ActiveGameService.GameState.GameStage == 0" class="control-buttons">
-  <!--pre-game-->
-  <a *ngIf="gameType == 3" class="control-buttons__btn" (click)="Start()">Start</a>
+<!--pre-game-->
+<div *ngIf="ActiveGameService.GameState.GameStage == 0 && gameType == 3" class="control-buttons">
+  <a class="control-buttons__btn" (click)="Start()">Start</a>
 </div>
+<!--In game-->
 <div *ngIf="ActiveGameService.GameState.GameStage == 3 || ActiveGameService.GameState.GameStage == 4" class="control-buttons">
-  <!--In game-->
   <a class="control-buttons__btn" (click)="Submit(false)">Submit</a>
   <a class="control-buttons__btn" (click)="Submit(true)">Submit and end round</a>
   <a class="control-buttons__btn" (click)="Clear(true)">Clear</a>
 </div>
+<!--post-game-->
 <div *ngIf="ActiveGameService.GameState.GameStage == 5" class="control-buttons">
-  <!--post-game-->
   <a *ngIf="SolutionButtonText && !ActiveGameService.GameState.MaximumScoreAchieved" class="control-buttons__btn" (click)="Solution(true)">{{SolutionButtonText}}</a>
   <a *ngIf="!FullGame" class="control-buttons__btn" (click)="PlayAgain(true)">Play again</a>
   <a *ngIf="FullGame" class="control-buttons__btn" (click)="NextRound(true)">Next round</a>

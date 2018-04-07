@@ -1,5 +1,5 @@
 .letters-row {
-  background-color: $color-sky-blue-2;
+  background-color: $color-blue-2;
 
   [class^="letters-row__tile"] {
     &:not(:last-child) {
@@ -20,7 +20,7 @@
     font-weight: 100;
 
     &-used {
-      background-color: $color-dark-blue;
+      background-color: $color-blue-4;
       font-family: 'Segoe UI Black', 'Arial Black', Arial;
       cursor: pointer;
 
@@ -33,7 +33,7 @@
     }
 
     &-empty {
-      background-color: $color-sky-blue-1;
+      background-color: $color-blue-1;
     }
   }
 }

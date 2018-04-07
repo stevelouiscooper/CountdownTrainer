@@ -1,127 +1,163 @@
 .numbers-game {
-    height: 40rem;
-    width: 95%;
+  margin: auto;
+
+  &-select {
+    margin: 1rem 0 1rem 0;
+    display: inline-block;
+    background-color: $color-light-grey;
+    padding: .75rem;
+
+
+    [class^="numbers-game-select__tile"] {
+      &:not(:last-child) {
+        margin-right: .55rem;
+      }
+    }
+
+    [class^="numbers-game-select-row"] {
+      &:not(:last-child) {
+        margin-bottom: .55rem;
+      }
+    }
+
+    &__row {
+    }
+
+    &__tile {
+      vertical-align: middle;
+      height: 6.7rem;
+      width: 6.3rem;
+      color: #fff;
+      display: inline-block;
+      text-align: center;
+      font-weight: 100;
+      cursor: pointer;
+
+      &-not-used {
+        color: black;
+        background-color: $color-blue-1;
+      }
+
+      &-unselected {
+        background-image: url("../../app/Content/Images/unchosen_number.png");
+      }
+
+      &-selected {
+        background-image: url("../../app/Content/Images/unchosen_number.png");
+        opacity: 0.3333;
+      }
+    }
+  }
+
+  &-target {
+    vertical-align: middle;
+    height: 7.0rem;
+    width: 14.8rem;
+    background-color: $color-blue-4;
+    display: inline-block;
+    text-align: center;
+    border: solid $color-blue-3 1rem;
+    margin-top: 1rem;
+
+    &__text {
+      letter-spacing: .3rem;
+      color: #fff;
+      font-size: 5.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      margin-top: -1.5rem;
+    }
+  }
+
+  &-board {
+    border: solid, black, 1px;
     margin: auto;
 
-    &-select {
-        padding-top: 2rem;
-        height: 100%;
-        width: 100%;
-
-        &__row {
-            padding: .2rem 0 .2rem 0;
-        }
-
-        &__tile {
-            vertical-align: middle;
-            height: 4.8rem;
-            width: 4.8rem;
-            color: black;
-            display: inline-block;
-            border: solid black 1px;
-            text-align: center;
-            padding: .2rem;
-            font-size: 2.5rem;
-            font-weight: bold;
-            font-family: 'Segoe UI Black', 'Arial Black', Arial;
-            cursor: pointer;
-
-            &-not-used {
-                color: black;
-                background-color: $color-grey;
-            }
-
-            &-unselected {
-                background-color: #fff;
-            }
-
-            &-selected {
-                background-color: #000;
-            }
-        }
+    &__row {
+      padding: 1rem .5rem 1rem .5rem;
     }
 
-    &-target {
-        vertical-align: middle;
-        height: 5.5rem;
-        width: 10.5rem;
-        background-color: white;
-        color: black;
-        display: inline-block;
-        text-align: center;
-        border: solid black 1px;
-        font-size: 2.5rem;
-        font-weight: bold;
-        font-family: 'Segoe UI Black', 'Arial Black', Arial;
-        padding: .4rem;
-        margin: .4rem;
+    [class^="numbers-game-board__tile"] {
+      &:not(:last-child) {
+        margin-right: .55rem;
+      }
     }
 
-    &-board {
-        border: solid, black, 1px;
-        margin: auto;
+    &__tile {
+      margin-top: .1rem;
+      vertical-align: middle;
+      height: 8rem;
+      width: calc(100% / 10);
+      display: inline-block;
+      text-align: center;
+      padding: 0 .8rem .8rem .8rem;
+      font-size: 5.5rem;
+      font-weight: 100;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer;
 
-        &__row {
-            padding: 1rem .5rem 1rem .5rem;
+
+      &-used {
+        background-color: $color-blue-1;
+        color: $color-blue-1;
+      }
+
+      &-unused {
+        background-color: $color-blue-4;
+        color: #fff;
+
+        &:hover {
+          border: solid 5px $color-grey;
+          font-size: 5.1em;
+          height: 7.9rem;
+          padding: 0 .6rem .6rem .6rem;
         }
+      }
 
-        &__tile {
-            vertical-align: middle;
-            height: 6.5rem;
-            width: 6.5rem;
-            color: black;
-            display: inline-block;
-            border: solid black 1px;
-            text-align: center;
-            padding: .4rem;
-            font-size: 2.5rem;
-            font-weight: bold;
-            font-family: 'Segoe UI Black', 'Arial Black', Arial;
-            cursor: pointer;
+      &-100 {
+        padding-left: .6rem;
+        padding-top: 1.2rem;
+        font-size: 3.8rem;
 
-            &-unused {
-                background-color: white;
-                color: black;
-            }
-
-            &-used {
-                background-color: $color-grey;
-                color: $color-grey;
-            }
+        &:hover {
+          padding-top: .8rem;
+          font-size: 3.4rem;
         }
-
-        &__equations-outer {
-            text-align: center;
-            padding: .4rem;
-            margin: 1rem;
-        }
-
-        &__equation {
-            padding: .6rem;
-            cursor: pointer;
-            font-size: 1.54em;
-            border: solid black 1px;
-        }
-
-        &__operators-outer {
-            padding: .4rem;
-            margin: .4rem;
-        }
-
-        &__operator {
-            vertical-align: middle;
-            height: 2.5rem;
-            width: 2.5rem;
-            background-color: white;
-            color: black;
-            display: inline-block;
-            border: solid black 1px;
-            text-align: center;
-            padding: 2rem;
-            font-size: 1.25rem;
-            font-weight: bold;
-            font-family: 'Segoe UI Black', 'Arial Black', Arial;
-            cursor: pointer;
-        }
+      }
     }
+
+    &__equations-outer {
+      text-align: center;
+      padding: .4rem;
+      margin: 1rem;
+    }
+
+    &__equation {
+      padding: .6rem;
+      cursor: pointer;
+      font-size: 1.54em;
+      border: solid black 1px;
+    }
+
+    &__operators-outer {
+      padding: .4rem;
+      margin: .4rem;
+    }
+
+    &__operator {
+      vertical-align: middle;
+      height: 2.5rem;
+      width: 2.5rem;
+      background-color: white;
+      color: black;
+      display: inline-block;
+      border: solid black 1px;
+      text-align: center;
+      padding: 2rem;
+      font-size: 1.25rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      cursor: pointer;
+    }
+  }
 }

@@ -144,6 +144,7 @@
     <Content Include="app\Components\score-tracker\app.score-tracker.html" />
     <Content Include="app\Components\timer\app.timer.html" />
     <Content Include="app\Content\Images\clock.png" />
+    <Content Include="app\Content\Images\unchosen_number.png" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
     <None Include="sass\components\_letters-board.scss" />

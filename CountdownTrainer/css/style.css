@@ -19,7 +19,7 @@ body {
   margin-bottom: .8rem !important; }
 
 .control-buttons {
-  height: 100%;
+  height: 6.8rem;
   text-align: center;
   padding: 1rem; }
   .control-buttons__btn, .control-buttons__btn:link, .control-buttons__btn:visited {
@@ -57,7 +57,6 @@ body {
   text-align: center;
   margin: auto; }
   .letters-board__buttons {
-    height: 10rem;
     text-align: center;
     padding: 1.5rem; }
     .letters-board__buttons-select-button {
@@ -121,73 +120,86 @@ body {
   font-size: 3rem; }
 
 .numbers-game {
-  height: 40rem;
-  width: 95%;
   margin: auto; }
   .numbers-game-select {
-    padding-top: 2rem;
-    height: 100%;
-    width: 100%; }
-    .numbers-game-select__row {
-      padding: .2rem 0 .2rem 0; }
+    margin: 1rem 0 1rem 0;
+    display: inline-block;
+    background-color: #cbcccd;
+    padding: .75rem; }
+    .numbers-game-select [class^="numbers-game-select__tile"]:not(:last-child) {
+      margin-right: .55rem; }
+    .numbers-game-select [class^="numbers-game-select-row"]:not(:last-child) {
+      margin-bottom: .55rem; }
     .numbers-game-select__tile {
       vertical-align: middle;
-      height: 4.8rem;
-      width: 4.8rem;
-      color: black;
+      height: 6.7rem;
+      width: 6.3rem;
+      color: #fff;
       display: inline-block;
-      border: solid black 1px;
       text-align: center;
-      padding: .2rem;
-      font-size: 2.5rem;
-      font-weight: bold;
-      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      font-weight: 100;
       cursor: pointer; }
       .numbers-game-select__tile-not-used {
         color: black;
-        background-color: #a7a8a9; }
+        background-color: #9cc8e3; }
       .numbers-game-select__tile-unselected {
-        background-color: #fff; }
+        background-image: url("../../app/Content/Images/unchosen_number.png"); }
       .numbers-game-select__tile-selected {
-        background-color: #000; }
+        background-image: url("../../app/Content/Images/unchosen_number.png");
+        opacity: 0.3333; }
   .numbers-game-target {
     vertical-align: middle;
-    height: 5.5rem;
-    width: 10.5rem;
-    background-color: white;
-    color: black;
+    height: 7.0rem;
+    width: 14.8rem;
+    background-color: #1b3a94;
     display: inline-block;
     text-align: center;
-    border: solid black 1px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Segoe UI Black', 'Arial Black', Arial;
-    padding: .4rem;
-    margin: .4rem; }
+    border: solid #386bad 1rem;
+    margin-top: 1rem; }
+    .numbers-game-target__text {
+      letter-spacing: .3rem;
+      color: #fff;
+      font-size: 5.5rem;
+      font-weight: bold;
+      font-family: 'Segoe UI Black', 'Arial Black', Arial;
+      margin-top: -1.5rem; }
   .numbers-game-board {
     border: solid, black, 1px;
     margin: auto; }
     .numbers-game-board__row {
       padding: 1rem .5rem 1rem .5rem; }
+    .numbers-game-board [class^="numbers-game-board__tile"]:not(:last-child) {
+      margin-right: .55rem; }
     .numbers-game-board__tile {
+      margin-top: .1rem;
       vertical-align: middle;
-      height: 6.5rem;
-      width: 6.5rem;
-      color: black;
+      height: 8rem;
+      width: calc(100% / 10);
       display: inline-block;
-      border: solid black 1px;
       text-align: center;
-      padding: .4rem;
-      font-size: 2.5rem;
-      font-weight: bold;
+      padding: 0 .8rem .8rem .8rem;
+      font-size: 5.5rem;
+      font-weight: 100;
       font-family: 'Segoe UI Black', 'Arial Black', Arial;
       cursor: pointer; }
-      .numbers-game-board__tile-unused {
-        background-color: white;
-        color: black; }
       .numbers-game-board__tile-used {
-        background-color: #a7a8a9;
-        color: #a7a8a9; }
+        background-color: #9cc8e3;
+        color: #9cc8e3; }
+      .numbers-game-board__tile-unused {
+        background-color: #1b3a94;
+        color: #fff; }
+        .numbers-game-board__tile-unused:hover {
+          border: solid 5px #a7a8a9;
+          font-size: 5.1em;
+          height: 7.9rem;
+          padding: 0 .6rem .6rem .6rem; }
+      .numbers-game-board__tile-100 {
+        padding-left: .6rem;
+        padding-top: 1.2rem;
+        font-size: 3.8rem; }
+        .numbers-game-board__tile-100:hover {
+          padding-top: .8rem;
+          font-size: 3.4rem; }
     .numbers-game-board__equations-outer {
       text-align: center;
       padding: .4rem;
