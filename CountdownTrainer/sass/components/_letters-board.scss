@@ -1,7 +1,8 @@
 .letters-board {
-  width: 100%;
+  width: 95%;
   text-align: center;
-  margin: auto;
+  top: 40rem;
+  @include horizontalCenter;
 
   &__buttons {
     text-align: center;
@@ -29,5 +30,13 @@
         }
       }
     }
+  }
+
+  &-buttons-container {
+    width: 95%;
+    top: 58.8rem;
+    height: 8rem;
+    padding: 1.5rem;
+    @include horizontalCenter;
   }
 }

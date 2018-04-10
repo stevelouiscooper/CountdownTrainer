@@ -1,5 +1,10 @@
 .game-board {
-  width: 80rem;
+  position: fixed;
+
+  @include horizontalCenter;
+
+  width: 85rem;
+  height: 85rem;
   border: solid $color-blue-4 .5rem;
   text-align: center;
   background-color: $color-blue-2;

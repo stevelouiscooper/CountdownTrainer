@@ -18,6 +18,15 @@ body {
 .u-margin-bottom-sm {
   margin-bottom: .8rem !important; }
 
+.u-position-absolute {
+  position: absolute !important; }
+
+.u-z-index-0 {
+  z-index: 0; }
+
+.u-z-index-100 {
+  z-index: 100; }
+
 .control-buttons__container {
   text-align: center;
   padding: .25rem; }
@@ -50,15 +59,23 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .game-board {
-  width: 80rem;
+  position: fixed;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 85rem;
+  height: 85rem;
   border: solid #1b3a94 0.5rem;
   text-align: center;
   background-color: #4f9dce; }
 
 .letters-board {
-  width: 100%;
+  width: 95%;
   text-align: center;
-  margin: auto; }
+  top: 40rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); }
   .letters-board__buttons {
     text-align: center;
     padding: 1.5rem; }
@@ -79,6 +96,14 @@ body {
       .letters-board__buttons-select-button:hover {
         border: solid 5px #a7a8a9;
         height: 5.7rem; }
+  .letters-board-buttons-container {
+    width: 95%;
+    top: 58.8rem;
+    height: 8rem;
+    padding: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0); }
 
 .letters-row {
   background-color: #4f9dce; }
@@ -88,7 +113,7 @@ body {
     margin-top: 1rem;
     vertical-align: middle;
     height: 8rem;
-    width: calc(100% / 10);
+    width: calc(100% / 12);
     color: #fff;
     display: inline-block;
     text-align: center;
@@ -107,6 +132,13 @@ body {
     .letters-row__tile-empty {
       background-color: #9cc8e3; }
 
+.message-bar {
+  top: .25rem;
+  width: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); }
+
 .message-bar-outer {
   padding: 1rem; }
 
@@ -115,7 +147,7 @@ body {
   text-align: center;
   padding: 1rem;
   display: block;
-  background-color: rgba(34, 34, 34, 0.45);
+  background-color: rgba(34, 34, 34, 0.333);
   width: 95%;
   border-radius: 1rem;
   color: #fff;
@@ -123,9 +155,13 @@ body {
   font-size: 3rem; }
 
 .numbers-game {
-  margin: auto; }
+  width: 95%;
+  top: 31rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); }
   .numbers-game-select {
-    margin: 1rem 0 1rem 0;
+    margin: 7.5rem 0 1rem 0;
     display: inline-block;
     background-color: #cbcccd;
     padding: .75rem; }
@@ -172,7 +208,8 @@ body {
     margin: auto;
     border: solid #1b3a94 1rem; }
     .numbers-game-board__row {
-      padding: 1rem .5rem 1rem .5rem; }
+      padding: 1rem .5rem 1rem .5rem;
+      margin-bottom: 1.5rem; }
     .numbers-game-board [class^="numbers-game-board__tile"]:not(:last-child) {
       margin-right: .55rem; }
     .numbers-game-board__tile {
@@ -205,6 +242,12 @@ body {
         .numbers-game-board__tile-100:hover {
           padding-top: .8rem;
           font-size: 3.4rem; }
+    .numbers-game-board__pad {
+      margin: auto;
+      width: 30rem;
+      height: 17rem;
+      background-color: #fff;
+      padding-top: 1rem; }
     .numbers-game-board__equations-outer {
       text-align: center;
       padding: .4rem;
@@ -212,8 +255,17 @@ body {
     .numbers-game-board__equation {
       padding: .6rem;
       cursor: pointer;
-      font-size: 1.54em;
-      border: solid black 1px; }
+      font-size: 3rem;
+      font-family: "KGPrimaryItalics";
+      font-weight: 200; }
+      .numbers-game-board__equation:hover {
+        color: #fff;
+        background-color: #1b3a94;
+        font-weight: 400;
+        border-radius: .5rem; }
+      .numbers-game-board__equation:active, .numbers-game-board__equation:focus {
+        outline: none;
+        transform: translateY(-2px); }
     .numbers-game-board__operators-container {
       padding: .4rem;
       margin: .4rem; }
@@ -245,11 +297,24 @@ body {
       font-family: 'Segoe UI Black', 'Arial Black', Arial;
       cursor: pointer; }
     .numbers-game-board-buttons-container {
+      width: 95%;
+      top: 76rem;
       height: 8rem;
-      padding: 1.5rem; }
+      padding: 1.5rem;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0); }
+
+.timer {
+  top: 9.5rem;
+  margin-bottom: 1rem;
+  width: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0); }
 
 .clock-outer {
-  margin-bottom: 1rem; }
+  z-index: 0; }
 
 .clockface {
   position: relative;
@@ -275,3 +340,7 @@ body {
     transition: all 30s;
     transform: rotate(180deg);
     transform-origin: 50% 100%; }
+
+@font-face {
+  font-family: KGPrimaryItalics;
+  src: url("../../app/Content/Fonts/KGPrimaryItalics.ttf"); }

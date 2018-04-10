@@ -1,7 +1,7 @@
 <div class="game-board">
-  <message-bar [gameType]="GAME_TYPE"></message-bar>
-  <timer [gameType]="GAME_TYPE"></timer>
-  <div class="numbers-game">
+  <message-bar class="message-bar u-position-absolute u-z-index-100" [gameType]="GAME_TYPE"></message-bar>
+  <timer class="timer u-position-absolute u-z-index-0" [gameType]="GAME_TYPE"></timer>
+  <div class="numbers-game u-position-absolute u-z-index-0">
     <div *ngIf="numbersGameService.GameState.GameStage <= 1" class="numbers-game-select">
       <div class="numbers-game-select-row">
         <div class="numbers-game-select__tile numbers-game-select__tile-not-used"></div>
@@ -41,43 +41,44 @@
       </div>
     </div>
     <div *ngIf="numbersGameService.GameState.GameStage >= 2" class="play-board">
-
       <div class="numbers-game-board">
         <div class="numbers-game-target">
-            <div class="numbers-game-target__text">{{numbersGameService.GameState.Target}}</div>
+          <div class="numbers-game-target__text">{{numbersGameService.GameState.Target}}</div>
         </div>
         <div class="numbers-game-board__row">
           <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[0].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[0].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[0].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[0])">{{numbersGameService.SelectedNumbers[0].Value}}</div>
-          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[1].Value == 100"[class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[1].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[1].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[1])">{{numbersGameService.SelectedNumbers[1].Value}}</div>
-          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[2].Value == 100"[class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[2].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[2].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[2])">{{numbersGameService.SelectedNumbers[2].Value}}</div>
-          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[3].Value == 100"[class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[3].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[3].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[3])">{{numbersGameService.SelectedNumbers[3].Value}}</div>
-          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[4].Value == 100"[class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[4].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[4].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[4])">{{numbersGameService.SelectedNumbers[4].Value}}</div>
-          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[5].Value == 100"[class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[5].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[5].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[5])">{{numbersGameService.SelectedNumbers[5].Value}}</div>
-          <br />
+          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[1].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[1].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[1].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[1])">{{numbersGameService.SelectedNumbers[1].Value}}</div>
+          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[2].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[2].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[2].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[2])">{{numbersGameService.SelectedNumbers[2].Value}}</div>
+          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[3].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[3].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[3].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[3])">{{numbersGameService.SelectedNumbers[3].Value}}</div>
+          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[4].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[4].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[4].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[4])">{{numbersGameService.SelectedNumbers[4].Value}}</div>
+          <div class="numbers-game-board__tile" [class.numbers-game-board__tile-100]="numbersGameService.SelectedNumbers[5].Value == 100" [class.numbers-game-board__tile-unused]="!numbersGameService.SelectedNumbers[5].IsUsed" [class.numbers-game-board__tile-used]="numbersGameService.SelectedNumbers[5].IsUsed" (click)="ClickNumber(numbersGameService.SelectedNumbers[5])">{{numbersGameService.SelectedNumbers[5].Value}}</div>
+        </div>
+        <div class="numbers-game-board__pad">
           <div class="numbers-game-board__equations-outer">
-            <span *ngIf="numbersGameService.GameState.EquationStr[0] && numbersGameService.GameState.EquationStr[0] != null" class="numbers-game-board__equation" (click)="ClickEquation(0)" [innerHTML]="numbersGameService.GameState.EquationStr[0]"></span><br /><br />
-            <span *ngIf="numbersGameService.GameState.EquationStr[1] && numbersGameService.GameState.EquationStr[1] != null" class="numbers-game-board__equation" (click)="ClickEquation(1)" [innerHTML]="numbersGameService.GameState.EquationStr[1]"></span><br /><br />
-            <span *ngIf="numbersGameService.GameState.EquationStr[2] && numbersGameService.GameState.EquationStr[2] != null" class="numbers-game-board__equation" (click)="ClickEquation(2)" [innerHTML]="numbersGameService.GameState.EquationStr[2]"></span>
+            <a *ngIf="numbersGameService.GameState.EquationStr[0] && numbersGameService.GameState.EquationStr[0] != null" class="numbers-game-board__equation" (click)="ClickEquation(0)" [innerHTML]="numbersGameService.GameState.EquationStr[0]"></a><br /><br />
+            <a *ngIf="numbersGameService.GameState.EquationStr[1] && numbersGameService.GameState.EquationStr[1] != null" class="numbers-game-board__equation" (click)="ClickEquation(1)" [innerHTML]="numbersGameService.GameState.EquationStr[1]"></a><br /><br />
+            <a *ngIf="numbersGameService.GameState.EquationStr[2] && numbersGameService.GameState.EquationStr[2] != null" class="numbers-game-board__equation" (click)="ClickEquation(2)" [innerHTML]="numbersGameService.GameState.EquationStr[2]"></a>
           </div>
-          <div class="numbers-game-board__operators-container">
-              <div class="numbers-game-board__operator-outer">
-                  <div class="numbers-game-board__operator-inner" (click)="ClickOperator('+')">+</div>
-              </div>
-              <div class="numbers-game-board__operator-outer">
-                  <div class="numbers-game-board__operator-inner" (click)="ClickOperator('-')">&minus;</div>
-              </div>
-              <div class="numbers-game-board__operator-outer">
-                  <div class="numbers-game-board__operator-inner" (click)="ClickOperator('*')">&times;</div>
-              </div>
-              <div class="numbers-game-board__operator-outer">
-                  <div class="numbers-game-board__operator-inner" (click)="ClickOperator('/')">&divide;</div>
-              </div>
+        </div>
+
+        <div class="numbers-game-board__operators-container">
+          <div class="numbers-game-board__operator-outer">
+            <div class="numbers-game-board__operator-inner" (click)="ClickOperator('+')">+</div>
+          </div>
+          <div class="numbers-game-board__operator-outer">
+            <div class="numbers-game-board__operator-inner" (click)="ClickOperator('-')">&minus;</div>
+          </div>
+          <div class="numbers-game-board__operator-outer">
+            <div class="numbers-game-board__operator-inner" (click)="ClickOperator('*')">&times;</div>
+          </div>
+          <div class="numbers-game-board__operator-outer">
+            <div class="numbers-game-board__operator-inner" (click)="ClickOperator('/')">&divide;</div>
           </div>
         </div>
       </div>
     </div>
   </div>
-    <div class="numbers-game-board-buttons-container">
-        <control-buttons [gameType]="GAME_TYPE" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewSolution()" (NextRoundClick)="NextRound()" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
-    </div>
+  <div class="numbers-game-board-buttons-container u-position-absolute u-z-index-0">
+      <control-buttons [gameType]="GAME_TYPE" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewSolution()" (NextRoundClick)="NextRound()" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
+  </div>
 </div>

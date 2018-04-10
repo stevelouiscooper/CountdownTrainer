@@ -195,6 +195,7 @@
     <Content Include="sass\layout\_navigation.scss" />
     <Content Include="sass\main.scss" />
     <Content Include="sass\components\_game-board.scss" />
+    <Content Include="sass\typography\_fonts.scss" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -203,6 +204,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\Content\Fonts\" />
     <Folder Include="App_Data\" />
     <Folder Include="sass\pages\" />
   </ItemGroup>

@@ -1,11 +1,11 @@
 <div class="game-board">
-  <message-bar [gameType]="GAME_TYPE"></message-bar>
-  <timer [gameType]="GAME_TYPE"></timer>
-  <div class="letters-board">
+  <message-bar class="message-bar u-position-absolute u-z-index-100" [gameType]="GAME_TYPE"></message-bar>
+  <timer class="timer u-position-absolute u-z-index-0" [gameType]="GAME_TYPE"></timer>
+  <div class="letters-board u-position-absolute u-z-index-0">
     <letters-top-row (LetterClicked)="UseLetter($event)"></letters-top-row>
     <letters-bottom-row (LetterClicked)="ReplaceLetter($event)"></letters-bottom-row>
   </div>
-  <div class="letters-board__buttons">
+  <div class="letters-board-buttons-container u-position-absolute u-z-index-0">
     <control-buttons (StartClick)="StartRound()" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (NextRoundClick)="NextRound()" [gameType]="GAME_TYPE" [ConundrumGame]="true" [FullGame]="FullGame"></control-buttons>
   </div>
 </div>

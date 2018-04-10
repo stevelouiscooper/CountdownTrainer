@@ -1,3 +1,9 @@
+.message-bar {
+  top: .25rem;
+  width: 95%;
+  @include horizontalCenter;
+}
+
 .message-bar-outer {
   padding: 1rem;
 }
@@ -7,7 +13,7 @@
   text-align: center;
   padding: 1rem;
   display: block;
-  background-color: rgba($color-dark-grey,0.45);
+  background-color: rgba($color-dark-grey,0.333);
   width: 95%;
   border-radius: 1rem;
   color: #fff;

@@ -1,7 +1,7 @@
 <div class="game-board">
-  <message-bar [gameType]="GAME_TYPE"></message-bar>
-  <timer [gameType]="GAME_TYPE"></timer>
-  <div class="letters-board">
+  <message-bar class="message-bar u-position-absolute u-z-index-100" [gameType]="GAME_TYPE"></message-bar>
+  <timer class="timer u-position-absolute u-z-index-0" [gameType]="GAME_TYPE"></timer>
+  <div class="letters-board u-position-absolute u-z-index-0">
     <letters-top-row (LetterClicked)="UseLetter($event)"></letters-top-row>
     <letters-bottom-row (LetterClicked)="ReplaceLetter($event)"></letters-bottom-row>
     <div class="letters-board__buttons">
@@ -9,8 +9,10 @@
         <button class="letters-board__buttons-select-button" (click)="SelectLetter(1)">VOWEL</button>
         <button class="letters-board__buttons-select-button" (click)="SelectLetter(2)">CONSONANT</button>
       </div>
-      <control-buttons [gameType]="GAME_TYPE" (StartClick)="StartRound()" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewBestWords()" (NextRoundClick)="NextRound($event)" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
     </div>
+  </div>
+  <div *ngIf="gameService.GameState.GameStage > 2" class="letters-board-buttons-container u-position-absolute u-z-index-0">
+    <control-buttons [gameType]="GAME_TYPE" (StartClick)="StartRound()" (SubmitClick)="Submit($event)" (ClearClick)="Clear()" (PlayAgainClick)="PlayAgain()" (SolutionClick)="ViewBestWords()" (NextRoundClick)="NextRound($event)" [ConundrumGame]="false" [FullGame]="FullGame" [SolutionButtonText]="SolutionButtonText"></control-buttons>
   </div>
 </div>
 <div *ngIf="gameService.GameState.GameStage == 5 && ShowBestWords">
