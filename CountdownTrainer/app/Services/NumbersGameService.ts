@@ -16,7 +16,7 @@ export class NumbersGameService implements IGameService {
 
   private readonly BIG_NUMBERS: number[] = [25, 50, 75, 100];
   private readonly SMALL_NUMBERS: number[] = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10];
-  private readonly MAX_NUMBERS = 6;
+  public readonly MAX_NUMBERS = 6;
 
   private gs: NumbersGameState;
   private bigNumbers: Num[];
@@ -30,6 +30,10 @@ export class NumbersGameService implements IGameService {
     this.smallNumbers = this.ShuffleNumbers(this.SMALL_NUMBERS, NumberType.small);
     this.gs.GameStage = GameStage.PreGame;
     this.gs.Message = "Select " + this.MAX_NUMBERS + " numbers to begin.";
+  }
+
+  public get NumbersSelected(): number {
+      return this.numbersSelected;
   }
 
   private initialise(): void {
@@ -80,13 +84,15 @@ export class NumbersGameService implements IGameService {
         this.gs.Message = "Select " + (this.MAX_NUMBERS - this.numbersSelected) + " more number" + plural + ".";
       } else {
         this.SetTarget(true);
-        this.gs.GameStage = GameStage.PreTimer;
       }
     }
   }
 
   public StartTimer(): void {
-    this.timerService.Start(this.gs, 3, this.preGameCallback, this.preTimerCompleteCallback, 30, this.timerTickCallback, this.timerCompleteCallback, this.postTimerCallback, this.postTimerCompleteCallback);
+        setTimeout(() => {
+            this.gs.GameStage = GameStage.PreTimer;
+            this.timerService.Start(this.gs, 3, this.preGameCallback, this.preTimerCompleteCallback, 30, this.timerTickCallback, this.timerCompleteCallback, this.postTimerCallback, this.postTimerCompleteCallback);
+        }, 400);
   }
   
   preGameCallback(ticks: number, gs: NumbersGameState): void {

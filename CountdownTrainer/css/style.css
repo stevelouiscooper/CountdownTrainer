@@ -161,7 +161,7 @@ body {
   left: 50%;
   transform: translate(-50%, 0); }
   .numbers-game-select {
-    margin: 7.5rem 0 1rem 0;
+    margin: 5.75rem 0 1rem 0;
     display: inline-block;
     background-color: #cbcccd;
     padding: .75rem; }
@@ -171,8 +171,8 @@ body {
       margin-bottom: .55rem; }
     .numbers-game-select__tile {
       vertical-align: middle;
-      height: 6.7rem;
-      width: 6.3rem;
+      height: 7.9rem;
+      width: 8.4rem;
       color: #fff;
       display: inline-block;
       text-align: center;
@@ -182,9 +182,11 @@ body {
         color: black;
         background-color: #9cc8e3; }
       .numbers-game-select__tile-unselected {
-        background-image: url("../../app/Content/Images/unchosen_number.png"); }
+        background-image: url("../../app/Content/Images/unchosen_number.png");
+        background-size: cover; }
       .numbers-game-select__tile-selected {
         background-image: url("../../app/Content/Images/unchosen_number.png");
+        background-size: cover;
         opacity: 0.3333; }
   .numbers-game-target {
     vertical-align: middle;
@@ -242,6 +244,10 @@ body {
         .numbers-game-board__tile-100:hover {
           padding-top: .8rem;
           font-size: 3.4rem; }
+      .numbers-game-board__tile-2-digit {
+        font-size: 5.2rem; }
+        .numbers-game-board__tile-2-digit:hover {
+          font-size: 4.7rem; }
     .numbers-game-board__pad {
       margin: auto;
       width: 30rem;
@@ -290,7 +296,7 @@ body {
         transform: translateY(-1px);
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
     .numbers-game-board__operator-inner {
-      margin-top: -.8rem;
+      margin-top: -.6rem;
       color: #fff;
       font-size: 3.75rem;
       font-weight: bold;

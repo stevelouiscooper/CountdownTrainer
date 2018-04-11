@@ -41,7 +41,7 @@ export class NumbersComponent implements IGameComponent {
 
     SelectNumber(num: Num): void {
       this.numbersGameService.SelectNumber(num);
-      if (this.numbersGameService.GameState.GameStage == GameStage.PreTimer) {
+        if (this.numbersGameService.NumbersSelected === this.numbersGameService.MAX_NUMBERS) {
           this.numbersGameService.StartTimer();
       }
     }
