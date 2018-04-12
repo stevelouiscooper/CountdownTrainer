@@ -33,7 +33,6 @@
       display: inline-block;
       text-align: center;
       font-weight: 100;
-      cursor: pointer;
 
       &-not-used {
         color: black;
@@ -43,6 +42,7 @@
       &-unselected {
         background-image: url("../../app/Content/Images/unchosen_number.png");
         background-size: cover;
+        cursor: pointer;
       }
 
       &-selected {
@@ -148,30 +148,48 @@
       padding-top: 1rem;
     }
 
-    &__equations-outer {
+    &__equations-container {
       text-align: center;
       padding: .4rem;
       margin: 1rem;
     }
 
     &__equation {
-      padding: .6rem;
-      cursor: pointer;
-      font-size: 3rem;
-      font-family: "KGPrimaryItalics";
-      font-weight: 200;
+      &-outer {
+        padding-bottom: 2rem;
 
-      &:hover {
-        color: #fff;
-        background-color: $color-blue-4;
-        font-weight: 400;
-        border-radius: .5rem;
+        transition: all .2s;          &:active,
+          &:focus {
+            transform: translateY(-.2rem);
+          }
       }
 
-      &:active,
-      &:focus {
-        outline: none;
-        transform: translateY(-2px);
+      &-active {
+            color: #fff;
+            background-color: $color-blue-4;
+            font-weight: 400;
+            border-radius: .5rem;
+      }
+
+      &-inner {
+          padding: .6rem;
+          cursor: pointer;
+          font-size: 3rem;
+          font-family: "KGPrimaryItalics";
+          font-weight: 200;            
+          
+          &:hover {
+            color: #fff;
+            background-color: $color-blue-4;
+            font-weight: 400;
+            border-radius: .5rem;
+          }          
+          
+          &:active,
+          &:focus {
+            transform: translateY(-.2rem);
+            box-shadow: 0 .5rem 1rem rgba(#000,.2);
+          }
       }
     }
 

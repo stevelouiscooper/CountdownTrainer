@@ -176,14 +176,14 @@ body {
       color: #fff;
       display: inline-block;
       text-align: center;
-      font-weight: 100;
-      cursor: pointer; }
+      font-weight: 100; }
       .numbers-game-select__tile-not-used {
         color: black;
         background-color: #9cc8e3; }
       .numbers-game-select__tile-unselected {
         background-image: url("../../app/Content/Images/unchosen_number.png");
-        background-size: cover; }
+        background-size: cover;
+        cursor: pointer; }
       .numbers-game-select__tile-selected {
         background-image: url("../../app/Content/Images/unchosen_number.png");
         background-size: cover;
@@ -254,24 +254,34 @@ body {
       height: 17rem;
       background-color: #fff;
       padding-top: 1rem; }
-    .numbers-game-board__equations-outer {
+    .numbers-game-board__equations-container {
       text-align: center;
       padding: .4rem;
       margin: 1rem; }
-    .numbers-game-board__equation {
+    .numbers-game-board__equation-outer {
+      padding-bottom: 2rem;
+      transition: all .2s; }
+      .numbers-game-board__equation-outer:active, .numbers-game-board__equation-outer:focus {
+        transform: translateY(-0.2rem); }
+    .numbers-game-board__equation-active {
+      color: #fff;
+      background-color: #1b3a94;
+      font-weight: 400;
+      border-radius: .5rem; }
+    .numbers-game-board__equation-inner {
       padding: .6rem;
       cursor: pointer;
       font-size: 3rem;
       font-family: "KGPrimaryItalics";
       font-weight: 200; }
-      .numbers-game-board__equation:hover {
+      .numbers-game-board__equation-inner:hover {
         color: #fff;
         background-color: #1b3a94;
         font-weight: 400;
         border-radius: .5rem; }
-      .numbers-game-board__equation:active, .numbers-game-board__equation:focus {
-        outline: none;
-        transform: translateY(-2px); }
+      .numbers-game-board__equation-inner:active, .numbers-game-board__equation-inner:focus {
+        transform: translateY(-0.2rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
     .numbers-game-board__operators-container {
       padding: .4rem;
       margin: .4rem; }
