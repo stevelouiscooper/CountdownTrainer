@@ -125,7 +125,7 @@ export class NumbersGameService implements IGameService {
       } else {
         gs.EquationValid = false;
         gs.Score = 0;
-        gs.Message = "You must submit a single equation only as your answer. 0 points scored.";
+        gs.Message = "You must submit a single equation as your answer. 0 points scored.";
       }
     } else {
       gs.Message = "You submitted: " + gs.SubmittedEquation.toString();
@@ -173,7 +173,8 @@ export class NumbersGameService implements IGameService {
 
   }
 
-  public UseNumber(num: Num) {
+  public UseNumber(num: Num): number {
+    let lastActiveEquation = this.gs.ActiveEquation;
     if (!num.IsUsed && this.gs.GameStage === GameStage.ClockStarted) {
       num.IsUsed = true;
       if (!this.gs.OperatorExpected) {
@@ -233,14 +234,15 @@ export class NumbersGameService implements IGameService {
 
         //Create new equation in the active equation slot
         this.gs.Equations[this.gs.ActiveEquation] = new Equation(null, left, null, null);
-
         //And await next operator
       }
       this.WriteEquations(this.gs);
     }
+    return lastActiveEquation;
   }
 
-  public UseEquation(index: number) {
+  public UseEquation(index: number): number {
+    let lastActiveEquation: number = this.gs.ActiveEquation;
     if (this.gs.GameStage === GameStage.ClockStarted) {
       let equation = this.gs.Equations[index];
       if (!this.gs.OperatorExpected) {
@@ -250,7 +252,7 @@ export class NumbersGameService implements IGameService {
           //Set active equation to be a new equation with this equation on the left ...
           this.gs.Equations[index] = new Equation(null, this.gs.Equations[index], null, null);
           this.gs.ActiveEquation = index;
-
+          lastActiveEquation = this.gs.ActiveEquation;
           //... and await operator
           this.gs.OperatorExpected = true;
           let opExpected = this.gs.OperatorExpected;
@@ -287,9 +289,11 @@ export class NumbersGameService implements IGameService {
       }
       this.WriteEquations(this.gs);
     }
+    return lastActiveEquation;
   }
 
   public UseOperator(op: string) {
+    let lastActiveEquation: number = this.gs.ActiveEquation;
     if (this.gs.GameStage === GameStage.ClockStarted) {
       if (!this.gs.Equations[this.gs.ActiveEquation].IsEmpty()) {
         //We have an active equation
@@ -316,6 +320,7 @@ export class NumbersGameService implements IGameService {
       }
       this.WriteEquations(this.gs);
     }
+    return lastActiveEquation;
   }
 
   public Clear(): void {

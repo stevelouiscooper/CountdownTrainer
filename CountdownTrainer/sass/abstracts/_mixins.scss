@@ -18,3 +18,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin hoverClickable {
+  transform: translateY(-.3rem);
+  box-shadow: 0 .5rem 1rem rgba(#000,.2);
+}
+
+@mixin clickClickable {
+  transform: translateY(.1rem);
+}

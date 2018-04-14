@@ -31,8 +31,9 @@ export class NumbersComponent implements IGameComponent {
     ShowSelection = true;
     ShowBoard = false;
     ShowSolution: boolean = false;
+    lastActiveEquation: number;
+    
     readonly SolutionButtonText: string = "Show solution";
-
     readonly GAME_TYPE: GameType = GameType.Numbers;
 
     constructor(private numbersGameService: NumbersGameService) {
@@ -47,15 +48,15 @@ export class NumbersComponent implements IGameComponent {
     }
 
     ClickNumber(num: Num): void {
-      this.numbersGameService.UseNumber(num);
+      this.lastActiveEquation = this.numbersGameService.UseNumber(num);
     }
 
     ClickOperator(operator: string): void {
-        this.numbersGameService.UseOperator(operator);
+      this.lastActiveEquation = this.numbersGameService.UseOperator(operator);
     }
 
 		ClickEquation(index: number): void {
-			this.numbersGameService.UseEquation(index);
+        this.lastActiveEquation = this.numbersGameService.UseEquation(index);			
 		}
 
     Submit(endRound: boolean): void {

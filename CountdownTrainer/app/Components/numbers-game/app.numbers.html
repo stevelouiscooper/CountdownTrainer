@@ -56,14 +56,14 @@
                 <div class="numbers-game-board__pad">
                     <div class="numbers-game-board__equations-container">
                         <div *ngIf="numbersGameService.GameState.EquationStr[0] && numbersGameService.GameState.EquationStr[0] != null" class="numbers-game-board__equation-outer">
-                            <a [class.numbers-game-board__equation-active]="numbersGameService.GameState.ActiveEquation === 0" class="numbers-game-board__equation-inner" (click)="ClickEquation(0)" [innerHTML]="numbersGameService.GameState.EquationStr[0]"></a>
-                        </div>
+                            <a [class.numbers-game-board__equation-inner-shrink-to-fit]="numbersGameService.GameState.EquationStr[0].length > 31" [class.numbers-game-board__equation-active]="numbersGameService.GameState.GameStage === 3 && lastActiveEquation === 0" class="numbers-game-board__equation-inner" (click)="ClickEquation(0)" [innerHTML]="numbersGameService.GameState.EquationStr[0]"></a>
+                        </div><br />
                         <div *ngIf="numbersGameService.GameState.EquationStr[1] && numbersGameService.GameState.EquationStr[1] != null" class="numbers-game-board__equation-outer">
-                            <a [class.numbers-game-board__equation-active]="numbersGameService.GameState.ActiveEquation === 1" class="numbers-game-board__equation-inner" (click)="ClickEquation(1)" [innerHTML]="numbersGameService.GameState.EquationStr[1]"></a>
-                        </div>
+                            <a [class.numbers-game-board__equation-inner-shrink-to-fit]="numbersGameService.GameState.EquationStr[1].length > 31" [class.numbers-game-board__equation-active]="numbersGameService.GameState.GameStage === 3 && lastActiveEquation === 1" class="numbers-game-board__equation-inner" (click)="ClickEquation(1)" [innerHTML]="numbersGameService.GameState.EquationStr[1]"></a>
+                        </div><br />
                         <div *ngIf="numbersGameService.GameState.EquationStr[2] && numbersGameService.GameState.EquationStr[2] != null" class="numbers-game-board__equation-outer">
-                            <a [class.numbers-game-board__equation-active]="numbersGameService.GameState.ActiveEquation === 2" class="numbers-game-board__equation-inner" (click)="ClickEquation(2)" [innerHTML]="numbersGameService.GameState.EquationStr[2]"></a>
-                        </div>
+                            <a [class.numbers-game-board__equation-inner-shrink-to-fit]="numbersGameService.GameState.EquationStr[2].length > 31" [class.numbers-game-board__equation-active]="numbersGameService.GameState.GameStage === 3 && lastActiveEquation === 2" class="numbers-game-board__equation-inner" (click)="ClickEquation(2)" [innerHTML]="numbersGameService.GameState.EquationStr[2]"></a>
+                        </div><br />
                     </div>
                 </div>
 
