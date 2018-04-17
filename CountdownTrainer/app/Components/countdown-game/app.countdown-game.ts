@@ -86,7 +86,7 @@ export class CountdownGameComponent {
       } else if (this.Percentage >= 60) {
         this.GameOverMessage += " That's a good effort!"
       } else {
-        this.GameOverMessage += " That's dog shit!"
+        this.GameOverMessage += "Better luck next time!"
       }
     }
   }

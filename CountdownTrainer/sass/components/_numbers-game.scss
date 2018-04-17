@@ -231,11 +231,17 @@
           opacity: 0;
         }
       }
-
+      
       &:active,
       &:focus {
         outline: none;
         @include clickClickable;
+      }
+    }
+
+    [class^="numbers-game-board__equation-outer"] {
+      &:not(:first-child) {
+        margin-top: 1.2rem;
       }
     }
 

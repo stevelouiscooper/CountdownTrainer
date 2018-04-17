@@ -113,7 +113,7 @@ body {
     margin-top: 1rem;
     vertical-align: middle;
     height: 8rem;
-    width: calc(100% / 12);
+    width: calc(100% / 11);
     color: #fff;
     display: inline-block;
     text-align: center;
@@ -311,6 +311,8 @@ body {
       .numbers-game-board__operator-outer:active, .numbers-game-board__operator-outer:focus {
         outline: none;
         transform: translateY(0.1rem); }
+    .numbers-game-board [class^="numbers-game-board__equation-outer"]:not(:first-child) {
+      margin-top: 1.2rem; }
     .numbers-game-board__operator-inner {
       margin-top: -.6rem;
       color: #fff;
